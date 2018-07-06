@@ -1,4 +1,8 @@
-<h2 *ngIf="!es_retro"> El mejor juego de los '80 fue: {nombre_juego}</h2>
-<h3 *ngIf="es_retro" [style.background]="color"> El mejor juego retro es: {mejor_juego_retro}</h3>
-<h3> Lo jugaba con: {{descripcion}}</h3>
-
+<h2 *ngIf="!es_retro"> El mejor juego de los '80 fue: {{nombre_juego}}</h2>
+<h3 *ngIf="es_retro"> El mejor juego retro es: {{mejor_juego_retro}}</h3>
+<h3 [style.background]="color"> Lo jugaba con: {{descripcion}}</h3>
+<h1>
+  <ul>
+    <li *ngFor="let game of arrayJuegos">{{game}}</li>
+  </ul>
+</h1>
