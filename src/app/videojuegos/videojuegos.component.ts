@@ -18,7 +18,7 @@ export class VideojuegosComponent {
   constructor() {
     this.nombre_juego = 'Príncipe de Persia';
     this.descripcion = 'amigos del barrio';
-    this.es_retro = true;
+    this.es_retro = false;
     this.mejor_juego_retro = 'Super Mario 64.';
     this.color = 'red';
     this.year = 2018;
