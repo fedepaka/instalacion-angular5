@@ -1,3 +1,15 @@
-<p>
-  task works!
-</p>
+<div>
+  <div class="card">
+    <div class="card-header">
+      <h2>{{task.titulo}}</h2>
+      <div class="float-right">
+        <a href="#" class="btn btn-danger" (click)="removeTask(task)">Remove</a>
+      </div>
+    </div>
+    <div class="card-body" [hidden]="task.hide">
+      {{task.descripcion}}
+    </div>
+    <div class="card-footer"></div>
+
+  </div>
+</div>
