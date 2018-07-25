@@ -1,13 +1,13 @@
 <div>
   <div class="card">
     <div class="card-header">
-      <h2>{{task.titulo}}</h2>
+      <h2>{{taskAux.title}}</h2>
       <div class="float-right">
-        <a href="#" class="btn btn-danger" (click)="removeTask(task)">Remove</a>
+        <a href="#" class="btn btn-danger" (click)="removeTask(taskAux)">Remove</a>
       </div>
     </div>
-    <div class="card-body" [hidden]="task.hide">
-      {{task.descripcion}}
+    <div class="card-body" [hidden]="taskAux.hide">
+      <p>{{taskAux.description}}</p>
     </div>
     <div class="card-footer"></div>
 

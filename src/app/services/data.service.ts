@@ -40,14 +40,12 @@ export class DataService {
     let tasksAux;
     tasksAux = this.getTasks();
 
-    for (let i = 0; i < tasksAux.length; i++) {
-      if (tasksAux[i] === task) {
-        tasksAux.splice(i, 1);
-        localStorage.setItem('tasks', JSON.stringify(tasksAux));
-        break;
-      }
+    const indexTask = tasksAux.findIndex(function (item) {
+      return item.guid === task.guid;
+    });
+    if (indexTask >= 0) {
+      tasksAux.splice(indexTask, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasksAux));
     }
-
   }
-
 }

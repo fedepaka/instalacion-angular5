@@ -1,5 +1,6 @@
 export interface Task {
-  titulo: string;
-  descripcion: string;
+  title: string;
+  description: string;
   hide: boolean;
+  guid: string;
 }

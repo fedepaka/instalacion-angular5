@@ -10,11 +10,20 @@ import { Task } from '../../models/task';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-  @Input('task') task: Task;
-
-  constructor(public dataService: DataService) { }
+  @Input('task') taskAux: Task;
+  public titulo: string;
+  constructor(public dataService: DataService) {  }
 
   ngOnInit() {
+    this.titulo = 'hola como estas';
+    // console.log(JSON.stringify(this.taskAux));
   }
-
+  removeTask(task: Task): void {
+    console.log(JSON.stringify(task));
+    const response = confirm('Are you sure delete this item? ' + this.taskAux.title);
+    console.log(response);
+    if (response && this.task !== null) {
+      this.dataService.removeTask(task);
+    }
+  }
 }
