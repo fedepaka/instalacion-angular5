@@ -28,6 +28,7 @@ export class DataService {
       let tasksAux;
       if (localStorage.getItem('tasks') === null) {
         tasksAux = [];
+        tasksAux.unshift(task);
       } else {
         tasksAux = JSON.parse(localStorage.getItem('tasks'));
         tasksAux.unshift(task);

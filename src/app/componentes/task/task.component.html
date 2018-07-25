@@ -3,6 +3,7 @@
     <div class="card-header">
       <h2>{{taskAux.title}}</h2>
       <div class="float-right">
+        <a href="#" class="btn btn-info" (click)="taskAux.hide">{{taskAux.hide ? 'Show' : 'Hide'}}</a>
         <a href="#" class="btn btn-danger" (click)="removeTask(taskAux)">Remove</a>
       </div>
     </div>

@@ -11,6 +11,7 @@ export class TaskAddComponent implements OnInit {
   title: string;
   description: string;
   guid: string;
+  hide: boolean;
   @Output() taskAdded = new EventEmitter<Task>();
   constructor() { }
 
@@ -23,6 +24,7 @@ export class TaskAddComponent implements OnInit {
       {
         title: this.title,
         description: this.description,
+        hide: false,
         guid: Date.now()
       }
     );
