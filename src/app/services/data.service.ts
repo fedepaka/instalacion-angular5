@@ -22,31 +22,23 @@ export class DataService {
   }
 
   addTask(task: Task): void {
-    if (task !== null) {
-      this.tasks.unshift(task);
-
-      let tasksAux;
-      if (localStorage.getItem('tasks') === null) {
-        tasksAux = [];
-        tasksAux.unshift(task);
-      } else {
-        tasksAux = JSON.parse(localStorage.getItem('tasks'));
-        tasksAux.unshift(task);
-      }
-      localStorage.setItem('tasks', JSON.stringify(tasksAux));
+    if (task === null) {
+      return;
     }
+    this.tasks.unshift(task);
+    let tasksAux;
+    tasksAux = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+    tasksAux.unshift(task);
+    localStorage.setItem('tasks', JSON.stringify(tasksAux));
   }
 
   removeTask(task: Task): void {
-    let tasksAux;
-    tasksAux = this.getTasks();
-
-    const indexTask = tasksAux.findIndex(function (item) {
+    const indexTask = this.tasks.findIndex(function (item) {
       return item.guid === task.guid;
     });
     if (indexTask >= 0) {
-      tasksAux.splice(indexTask, 1);
-      localStorage.setItem('tasks', JSON.stringify(tasksAux));
+      this.tasks.splice(indexTask, 1);
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
     }
   }
 }

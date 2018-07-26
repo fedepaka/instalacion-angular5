@@ -18,12 +18,11 @@ export class TaskComponent implements OnInit {
     this.titulo = 'hola como estas';
     // console.log(JSON.stringify(this.taskAux));
   }
-  removeTask(task: Task): void {
-    console.log(JSON.stringify(task));
+  removeTask(): void {
+    // console.log(JSON.stringify(task));
     const response = confirm('Are you sure delete this item? ' + this.taskAux.title);
-    console.log(response);
-    if (response && this.task !== null) {
-      this.dataService.removeTask(task);
+    if (response && this.taskAux !== null) {
+       this.dataService.removeTask(this.taskAux);
     }
   }
 }
