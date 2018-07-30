@@ -10,7 +10,7 @@ import { Task } from '../../models/task';
 export class TaskAddComponent implements OnInit {
   title: string;
   description: string;
-  guid: string;
+  idTask: number;
   hide: boolean;
   @Output() taskAdded = new EventEmitter<Task>();
   constructor() { }
@@ -25,11 +25,11 @@ export class TaskAddComponent implements OnInit {
         title: this.title,
         description: this.description,
         hide: false,
-        guid: Date.now()
+        idTask: 0
       }
     );
     this.title = '';
     this.description = '';
-    this.guid = '';
+    this.idTask = 0;
   }
 }

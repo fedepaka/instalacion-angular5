@@ -34,7 +34,7 @@ export class DataService {
 
   removeTask(task: Task): void {
     const indexTask = this.tasks.findIndex(function (item) {
-      return item.guid === task.guid;
+      return item.idTask === task.idTask;
     });
     if (indexTask >= 0) {
       this.tasks.splice(indexTask, 1);
