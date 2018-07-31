@@ -4,8 +4,6 @@ import {Component, OnInit} from '@angular/core';
 import {Task} from '../../models/task';
 import {TasksService} from '../../services/tasks.service';
 import {Observable} from 'rxjs/Observable';
-import {iteratorToArray} from "@angular/animations/browser/src/util";
-import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
