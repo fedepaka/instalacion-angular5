@@ -34,7 +34,7 @@ export class TasksService {
 
   addTask (task: Task): Observable<Task> {
     return this.http.post<Task>(this.tasksUrl, task, httpOptions).pipe(
-      tap((task: Task) => this.log(`added Task w/ id=${task.idTask}`)),
+      tap((myTask: Task) => this.log(`added Task w/ id=${myTask.idTask}`)),
       catchError(this.handleError<Task>('addTask'))
     );
   }

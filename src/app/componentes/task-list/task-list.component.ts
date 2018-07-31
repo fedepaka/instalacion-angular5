@@ -4,6 +4,8 @@ import {Component, OnInit} from '@angular/core';
 import {Task} from '../../models/task';
 import {TasksService} from '../../services/tasks.service';
 import {Observable} from 'rxjs/Observable';
+import {iteratorToArray} from "@angular/animations/browser/src/util";
+import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
@@ -13,6 +15,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[];
+
   constructor(public taskService: TasksService) {
   }
 
@@ -20,18 +23,17 @@ export class TaskListComponent implements OnInit {
     // this.tasks = this.dataService.getTasks();
     // this.tasks = this.taskService.getTask();
     // console.log(this.taskService.getTask());
-    this.getUsers();
+    this.getTasks();
   }
 
   addTask(task: Task) {
     // this.dataService.addTask(task);
-    debugger;
     this.taskService.addTask(task).subscribe(data => {
       console.log(data);
     });
   }
 
-  getUsers() {
+  getTasks() {
     this.taskService.getTask().subscribe(data => {
       console.log(data);
       const list = data.response as Task[];
